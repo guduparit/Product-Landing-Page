@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- stylesheet -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- for linking bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- bootstrap imports ends -->
+
+  <title>E-commerce product page</title>
+
+</head>
+
+<body class="p-0 m-0 border-0 bd-example m-0 border-0">
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-4">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand justify-content-center my-auto" href="#">
+          <img src="images/logo.svg" alt="brand" class="ps-1">
+        </a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body my-auto mt-1">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav"></div> -->
+            <ul class="navbar-nav justify-content-center my-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Collections</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Men</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Women</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="navbar-nav d-flex flex-row justify-content-start my-auto">
+          <li class="nav-item p-0">
+            <img src="images/icon-cart.svg" alt="cart" class="img-fluid me-2 cartSymbol" id="cartSymbol" type="button">
+            <span class="translate-middle badge rounded-circle cart-num visually-hidden m-0">
+              99+ </span>
+          </li>
+          <li class="nav-item p-0">
+            <img src="images/image-avatar.png" alt="avatar" class="rounded-circle img-fluid p-0" width="28" height="24">
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- <main> -->
+  <!-- Modal For Product Show -->
+  <div class="container">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col d-flex flex-column">
+              <div class="main-product carousel slide carousel-fade pointer-event" id="carouselExampleModal">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/image-product-1.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/image-product-2.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/image-product-3.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/image-product-4.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleModal"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleModal"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="container mt-1">
+                <div class="row">
+                  <div class="col">
+                    <img src="images/image-product-1-thumbnail.jpg" class="rounded thumbnail-1 " alt="imagethumbnail"
+                      data-bs-target="#carouselExampleModal" data-bs-slide-to="0" class="active" aria-current="true"
+                      aria-label="Slide 1">
+                  </div>
+                  <div class="col">
+                    <img src="images/image-product-2-thumbnail.jpg" class="rounded thumbnail-2" alt="imagethumbnail"
+                      data-bs-target="#carouselExampleModal" data-bs-slide-to="1" aria-label="Slide 2">
+                  </div>
+                  <div class="col">
+                    <img src="images/image-product-3-thumbnail.jpg" class="rounded thumbnail-3" alt="imagethumbnail"
+                      data-bs-target="#carouselExampleModal" data-bs-slide-to="2" aria-label="Slide 3">
+                  </div>
+                  <div class="col">
+                    <img src="images/image-product-4-thumbnail.jpg" class="rounded thumbnail-4" alt="imagethumbnail"
+                      data-bs-target="#carouselExampleModal" data-bs-slide-to="3" aria-label="Slide 4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Code Ends Here -->
+
+  <!-- Cart Content Toast Starts Here-->
+  <div class="cart-content toast p-3" id="cartContent" role="alert" aria-live="assertive" aria-atomic="true">
+
+    <div class="toast-header">
+      <strong class="me-auto">Cart</strong>
+      <small>1 Item</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <img src="images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <p class="product-name m-0 p-0">Fall Limited Edition Sneakers</p>
+            </div>
+            <div class="row">
+              <p class="product-price m-0 p-0">
+                <span class="price">$125</span>x<span class="total-quantity">0</span>
+                <span class="total-price ms-2 fw-bold">$0</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="justify-content-center mt-4">
+              <img src="images/icon-delete.svg" alt="deleteSymbol">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <button class="checkout p-2"> Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Content Toast Ends Here -->
+
+  <div class="container-sm mx-auto my-auto justify-content-center">
+    <div class="row">
+      <div class="col-sm-4 d-flex flex-column">
+
+        <div class="main-product mb-3 carousel slide carousel-fade pointer-event" id="carouselExampleFade">
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/image-product-1.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+            </div>
+            <div class="carousel-item">
+              <img src="images/image-product-2.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+            </div>
+            <div class="carousel-item">
+              <img src="images/image-product-3.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+            </div>
+            <div class="carousel-item">
+              <img src="images/image-product-4.jpg" class="img-fluid rounded product--image" alt="imageproduct">
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+
+        <div class="container-sm">
+          <div class="row">
+            <div class="col-3">
+              <img src="images/image-product-1-thumbnail.jpg" class="img-fluid thumbnail-1 " alt="imagethumbnail"
+                data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1">
+            </div>
+            <div class="col-3">
+              <img src="images/image-product-2-thumbnail.jpg" class="img-fluid thumbnail-2" alt="imagethumbnail"
+                data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2">
+            </div>
+            <div class="col-3">
+              <img src="images/image-product-3-thumbnail.jpg" class="img-fluid thumbnail-3" alt="imagethumbnail"
+                data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3">
+            </div>
+            <div class="col-3">
+              <img src="images/image-product-4-thumbnail.jpg" class="img-fluid thumbnail-4" alt="imagethumbnail"
+                data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 my-auto mx-auto">
+
+        <div class="container-sm">
+          <div class="row">
+            <p class="company-name font-weight-bold">SNEAKER COMPANY</p>
+          </div>
+          <div class="row">
+            <p class="product-headline font-weight-bold">Fall Limited Edition Sneakers</p>
+          </div>
+          <div class="row">
+            <p class="opacity-75 text-wrap">These low-profile sneakers are your perfect casual wear companion. Featuring
+              a
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <div class="row hstack">
+              <div class="col-4 m-0 d-flex flex-row">
+                <p class="product-discounted w-50">$125.00</p>
+                <p class="product-discount">50%</p>
+              </div>
+            </div>
+            <div class="row">
+              <p class="product-original opacity-75"><del>$250.00</del></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="d-flex flex-row"> -->
+        <div class="container-sm">
+          <div class="row hstack">
+            <div class="col-sm-4 hstack d-flex flex-row justify-content-evenly product-add-sub">
+              <img src="images/icon-minus.svg" alt="product-minus" id="btn-minus">
+              <p class="product-quantity mt-2">0</p>
+              <img src="images/icon-plus.svg" alt="product-plus" id="btn-plus">
+              <!-- <div class="row product-add-sub hstack">
+                <div class="col-sm-4">
+                  <img src="images/icon-minus.svg" alt="product-minus" id="btn-minus">
+                </div>
+                <div class="col-sm-4">
+                  <p class="product-quantity mt-3">0</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="images/icon-plus.svg" alt="product-plus" id="btn-plus">
+                </div>
+              </div> -->
+            </div>
+            <div class="col-sm m-1">
+              <button class="product-cart-symbol p-2  w-100">
+                <img src="images/icon-cart copy.svg" alt="" class="product-cart-image "> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- </main> -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
